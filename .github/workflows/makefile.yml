@@ -8,4 +8,4 @@ check:
     make install
 
 distcheck:
-    make run check
+    make check

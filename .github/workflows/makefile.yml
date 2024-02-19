@@ -1,24 +1,11 @@
-name: Makefile CI
+# Makefile CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+.PHONY: all check distcheck
 
-jobs:
-  build:
+all: check distcheck
 
-    runs-on: ubuntu-latest
+check:
+    make install
 
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Install dependencies
-      run: make
-
-    - name: Run check
-      run: make check
-
-    - name: Run distcheck
-      run: make distcheck
+distcheck:
+    make run check

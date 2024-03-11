@@ -8,7 +8,6 @@ pipeline {
                     url 'https://github.com/Fateemaaa/mlopstask2.git'
                 }
                 branch 'main'
-                scriptPath 'mlopstask2-main' // Specify the folder containing Jenkinsfile
             }
         }
     }
@@ -16,13 +15,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'pip install -r requirements.txt'
+                dir('mlopstask2-main') {
+                    sh 'pip install -r requirements.txt'
+                }
             }
         }
         
         stage('Test') {
             steps {
-                sh 'python3 test_test.py'
+                dir('mlopstask2-main') {
+                    sh 'python3 test_test.py'
+                }
             }
         }
         

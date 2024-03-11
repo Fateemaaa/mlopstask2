@@ -1,0 +1,11 @@
+# Makefile CI
+
+.PHONY: all check distcheck
+
+all: check distcheck
+
+check:
+    make install
+
+distcheck:
+    make check

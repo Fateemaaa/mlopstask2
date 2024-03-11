@@ -15,17 +15,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('mlopstask2-main') {
-                    sh 'pip install -r requirements.txt'
-                }
+                bat 'pip install -r mlopstask2-main\\requirements.txt'
             }
         }
         
         stage('Test') {
             steps {
-                dir('mlopstask2-main') {
-                    sh 'python3 test_test.py'
-                }
+                bat 'python mlopstask2-main\\test_test.py'
             }
         }
         

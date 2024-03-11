@@ -1,6 +1,18 @@
 pipeline {
     agent any
     
+    options {
+        scm {
+            git {
+                remote {
+                    url 'https://github.com/Fateemaaa/mlopstask2.git'
+                }
+                branch 'main' // Specify the branch
+                scriptPath 'mlopstask2-main/Jenkinsfile' // Specify the path to the Jenkinsfile
+            }
+        }
+    }
+    
     stages {
         stage('Build') {
             steps {

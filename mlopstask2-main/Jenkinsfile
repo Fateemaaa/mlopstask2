@@ -8,7 +8,7 @@ pipeline {
                     url 'https://github.com/Fateemaaa/mlopstask2.git'
                 }
                 branch 'main' // Specify the branch
-                scriptPath 'mlopstask2-main' // Specify the path to the Jenkinsfile
+                scriptPath '/mlopstask2-main/Jenkinsfile' // Specify the path to the Jenkinsfile
             }
         }
     }
